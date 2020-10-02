@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>BMI calculator</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<script src="jquery-3.5.1.min.js"></script>
+	<style>
+		body{
+			background: linear-gradient(to top left, #33ccff 0%, #ff99cc 100%);
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="card w-50">
+		<div class="card-header text-center"><b>BMI Calculator</b><br>by Solanki</div>
+	
+	<div class="card-body">
+		<form class="w-50 m-auto" onsubmit="return false">
+			<div class="form-group">
+				<label>Weight</label><br>
+				<input type="text" name="" id="weight" class="form-control" placeholder="in kg" required>
+			</div>
+			<div class="form-group">
+				<label>Height</label><br>
+				<input type="text" name="" id="height" class="form-control" placeholder="in ft" required>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-success" onclick="getbmivalue()">Calculate BMI</button>
+			</div>
+			<div class="form-group">
+				<label>BMI Value</label><br>
+				<input type="text" name="" id="show" class="form-control">
+			</div>
+			
+			
+		</form>
+	</div>
+	<div class="card-footer text-center">A healthy BMI  ranges between 19 and 25</div>
+</div>
+</div>
+<script>
+	function getbmivalue(){
+	var x = document.getElementById("weight").value;
+	var y = document.getElementById("height").value;
+	y=y*12;
+	y=y*0.025;
+	var newbmi = x/Math.pow(y,2);
+	newbmi=Math.round(newbmi);
+	document.getElementById("show").value=newbmi;
+}
+
+</script>
+
+</body>
+
+</html>>
